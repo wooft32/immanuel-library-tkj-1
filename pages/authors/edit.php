@@ -10,6 +10,12 @@
 
 <body>
   <?php
+$pageTitle = "edit penulis";
+$pageSubtitle = "kelola data sistem perpustakaan";
+?>
+<?php require_once "../../components/admin/sidebar.php"; ?>
+<?php require_once "../../components/admin/topbar.php"; ?>
+  <?php
   $author = [
     "id" => 1,
     "name" => "Andrea Hirata",

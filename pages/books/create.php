@@ -1,3 +1,9 @@
+<?php
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -8,7 +14,13 @@
 </head>
 <body>
   <?php
-  // Data kategori & penulis dummy untuk mengisi dropdown/checkbox di form
+  $pageTitle = "tambah buku";
+  $pageSubtitle = "kelola data sistem perpustakaan";
+  ?>
+  <?php require_once "../../components/admin/sidebar.php"; ?>
+  <?php require_once "../../components/admin/topbar.php"; ?>
+  <?php
+  // Data kategori & penulis dummy untuk mengisi dropdown/checkbox di form  
   $categories = ["Fiksi", "Sains", "Sejarah", "Teknologi"];
   $authors = ["Andrea Hirata", "Tere Liye", "J.K. Rowling", "Pramoedya Ananta Toer", "Sapardi Djoko Damono"];
   ?>

@@ -8,6 +8,12 @@
 </head>
 <body>
   <?php
+  $pageTitle = "manajemen kategori";
+  $pageSubtitle = "kelola data sistem perpustakaan";
+  ?>
+  <?php require_once "../../components/admin/sidebar.php"; ?>
+  <?php require_once "../../components/admin/topbar.php"; ?>
+  <?php
   $category = ["id" => 1, "name" => "Fiksi", "description" => "Novel dan cerita rekaan", "total_books" => 3];
   ?>
   <div class="app-shell">

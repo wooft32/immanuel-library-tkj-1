@@ -8,6 +8,12 @@
 </head>
 <body>
   <?php
+$pageTitle = "edit pengguna";
+$pageSubtitle = "kelola data sistem perpustakaan";
+?>
+<?php require_once "../../components/admin/sidebar.php"; ?>
+<?php require_once "../../components/admin/topbar.php"; ?>
+  <?php
   $user = [
       "id"    => 2,
       "name"  => "Budi Santoso",

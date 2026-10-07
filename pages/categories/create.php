@@ -7,6 +7,12 @@
   <link rel="stylesheet" href="../../styles/categories/create.css">
 </head>
 <body>
+  <?php
+  $pageTitle = "tambah kategori";
+  $pageSubtitle = "kelola data sistem perpustakaan";
+  ?>
+  <?php require_once "../../components/admin/sidebar.php"; ?>
+  <?php require_once "../../components/admin/topbar.php"; ?>
   <div class="app-shell">
   <aside class="app-sidebar">
     <div class="brand">

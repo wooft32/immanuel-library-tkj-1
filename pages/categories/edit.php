@@ -8,6 +8,12 @@
 </head>
 <body>
   <?php
+$pageTitle = "edit kategori";
+$pageSubtitle = "kelola data sistem perpustakaan";
+?>
+<?php require_once "../../components/admin/sidebar.php"; ?>
+<?php require_once "../../components/admin/topbar.php"; ?>
+  <?php
   $category = [
       "id"          => 1,
       "name"        => "Fiksi",

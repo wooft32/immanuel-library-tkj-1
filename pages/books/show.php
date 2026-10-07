@@ -8,6 +8,12 @@
 </head>
 <body>
   <?php
+  $pageTitle = "detail buku";
+  $pageSubtitle = "kelola data sistem perpustakaan";
+  ?>
+  <?php require_once "../../components/admin/sidebar.php"; ?>
+  <?php require_once "../../components/admin/topbar.php"; ?>
+  <?php
   require '../../repositories/book-repository.php';
   ?>
   <div class="app-shell">

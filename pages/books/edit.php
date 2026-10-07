@@ -8,6 +8,12 @@
 </head>
 <body>
   <?php
+  $pageTitle = "edit buku";
+  $pageSubtitle = "kelola data sistem perpustakaan";
+  ?>
+  <?php require_once "../../components/admin/sidebar.php"; ?>
+  <?php require_once "../../components/admin/topbar.php"; ?>
+  <?php
   $categories = ["Fiksi", "Sains", "Sejarah", "Teknologi"];
   $authors = ["Andrea Hirata", "Tere Liye", "J.K. Rowling", "Pramoedya Ananta Toer", "Sapardi Djoko Damono"];
 
