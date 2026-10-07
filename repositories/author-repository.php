@@ -7,3 +7,17 @@ $authors = [
   ["id" => 4, "name" => "Pramoedya Ananta Toer",   "total_books" => 2],
   ["id" => 5, "name" => "Sapardi Djoko Damono",    "total_books" => 1],
 ];
+
+function getAuthors() {
+  return [
+    ["id" => 1, "name" => "Andrea Hirata", "bio" => "Penulis Laskar Pelangi"]
+  ];
+}
+
+function getAuthor($id) {
+  $authors = getAuthors();
+  foreach ($authors as $author) {
+    if ($author["id"] == $id) return $author;
+  }
+  return null;
+}
