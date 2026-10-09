@@ -1,6 +1,7 @@
 
 <?php
 
+function getBooks(){
 $books = [
   [
     "id" => 1,
@@ -43,8 +44,11 @@ $books = [
     "authors" => ["Pramoedya Ananta Toer", "Sapardi Djoko Damono"],
   ],
 ];
+return $books;
+}
 
-$book = [
+function getBook() {
+  $book = [
   "id" => 5,
   "title" => "Antologi Rasa Nusantara",
   "isbn" => "978-602-1234-56-7",
@@ -54,23 +58,5 @@ $book = [
   "description" => "Kumpulan puisi dan cerita pendek dari berbagai penulis Nusantara.",
   "authors" => ["Pramoedya Ananta Toer", "Sapardi Djoko Damono"],
 ];
-function getBooks() {
-  return [
-    [
-      "id" => 1,
-      "title" => "Laskar Pelangi",
-      "category_id" => 1,
-      "author_id" => 1,
-      "year" => 2005,
-      "stock" => 12
-    ]
-  ];
-}
-
-function getBook($id) {
-  $books = getBooks();
-  foreach ($books as $book) {
-    if ($book["id"] == $id) return $book;
-  }
-  return null;
+return $book;
 }

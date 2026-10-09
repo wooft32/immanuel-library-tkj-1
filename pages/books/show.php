@@ -1,3 +1,8 @@
+<?php
+require '../../repositories/book-repository.php';
+
+$book = getBook();
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -13,9 +18,6 @@
   ?>
 
 
-  <?php
-  require '../../repositories/book-repository.php';
-  ?>
   <div class="app-shell">
   <?php require_once "../../components/admin/sidebar.php"; ?>
 
