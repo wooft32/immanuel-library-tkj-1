@@ -1,3 +1,12 @@
+<?php
+require_once "../../repositories/book-repository.php";
+require_once "../../repositories/category-repository.php";
+require_once "../../repositories/author-repository.php";
+
+$book = getBook();
+$categories = getCategories();
+$authors = getAuthors();
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -30,7 +39,7 @@
      <?php require_once "../../components/admin/topbar.php"; ?>
 
       <div class="app-content">
-        <form method="" action="">
+        <form action="../../actions/books/update.php" method="post">
           <input type="hidden" name="id" value="<?= $book['id'] ?>">
           <div class="form-card" style="margin-bottom:20px;">
             <div class="form-section-title">Data Buku</div>
