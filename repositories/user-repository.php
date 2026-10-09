@@ -8,9 +8,8 @@ $users = [
 ];
 
 function getUsers() {
-  return [
-    ["id" => 1, "name" => "Admin", "email" => "admin@mail.com", "role" => "admin"]
-  ];
+    global $users;
+    return $users;
 }
 
 function getUser($id) {
