@@ -32,7 +32,7 @@ $pageSubtitle = "kelola data sistem perpustakaan";
 
       <div class="app-content">
         <div class="toolbar">
-          <form method="" action="" class="toolbar-filters">
+          <form method="GET" action="" class="toolbar-filters">
             <div class="search-box">
               <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -86,7 +86,7 @@ $pageSubtitle = "kelola data sistem perpustakaan";
                 <td>
                   <div class="cell-actions">
                     <a href="edit.php?id=<?= $book['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
-                    <a href="../../actions/books/destroy.php?id=1" onclick="return confirm('yakin hapus buku?');">hapus</a>
+                    <a href="../../actions/books/destroy.php?id=<?= $book['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('yakin hapus buku?');">hapus</a>
                   </div>
                 </td>
               </tr>
