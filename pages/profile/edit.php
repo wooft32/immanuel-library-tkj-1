@@ -35,7 +35,7 @@ $pageSubtitle = "kelola data sistem perpustakaan";
 <?php require_once "../../components/admin/topbar.php"; ?>
 
       <div class="app-content">
-        <form method="" action="">
+        <form method="POST" action="../../actions/profile/update.php">
           <div class="form-card" style="margin-bottom:20px;">
             <div class="form-section-title">Data Akun</div>
             <div class="form-row">
