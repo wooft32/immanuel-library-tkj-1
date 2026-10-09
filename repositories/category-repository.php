@@ -7,9 +7,8 @@ $categories = [
   ["id" => 4, "name" => "Teknologi", "description" => "Buku pemrograman dan teknologi",  "total_books" => 0],
 ];  
 function getCategories() {
-  return [
-    ["id" => 1, "name" => "Fiksi", "description" => "Buku cerita fiksi"]
-  ];
+    global $categories;
+    return $categories;
 }
 
 function getCategory($id) {
