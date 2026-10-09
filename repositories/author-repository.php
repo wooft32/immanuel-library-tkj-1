@@ -9,9 +9,8 @@ $authors = [
 ];
 
 function getAuthors() {
-  return [
-    ["id" => 1, "name" => "Andrea Hirata", "bio" => "Penulis Laskar Pelangi"]
-  ];
+    global $authors;
+    return $authors;
 }
 
 function getAuthor($id) {
