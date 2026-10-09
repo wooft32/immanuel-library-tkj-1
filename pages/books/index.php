@@ -13,6 +13,7 @@
 $pageTitle = "manajemen buku";
 $pageSubtitle = "kelola data sistem perpustakaan";
 ?>
+<?php require_once "../../repositories/book-repository.php"; ?>
 <?php require_once "../../components/admin/sidebar.php"; ?>
 <?php require_once "../../components/admin/topbar.php"; ?>
   <?php
@@ -137,7 +138,7 @@ $pageSubtitle = "kelola data sistem perpustakaan";
                 <td>
                   <div class="cell-actions">
                     <a href="edit.php?id=<?= $book['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
-                    <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                    <a href="../../actions/books/destroy.php?id=1" onclick="return confirm('yakin hapus buku?');">hapus</a>
                   </div>
                 </td>
               </tr>
