@@ -1,4 +1,8 @@
 <?php
-echo "<h3>Aksi Hapus Kategori</h3>";
-echo "ID Kategori: " . ($_GET['id'] ?? '') . "<br>";
-echo '<a href="../../pages/categories/index.php">Kembali</a>';
+if (isset($_GET['id']) && $_SERVER['REQUEST_METHOD'] === "GET") {
+    $id = $_GET['id'];
+
+    echo "Kategori dengan id " . htmlspecialchars($id) . " berhasil dihapus.";
+}
+
+?>

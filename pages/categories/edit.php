@@ -1,3 +1,12 @@
+<?php
+require_once __DIR__ . "/../../repositories/category-repository.php";
+
+$category = getCategory();
+
+$pageTitle = "Edit Kategori";
+$pageSubtitle = "Perbarui data kategori";
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -7,24 +16,11 @@
   <link rel="stylesheet" href="../../styles/categories/edit.css">
 </head>
 <body>
-  <?php
-$pageTitle = "edit kategori";
-$pageSubtitle = "kelola data sistem perpustakaan";
-?>
-
-
-  <?php
-  $category = [
-      "id"          => 1,
-      "name"        => "Fiksi",
-      "description" => "Novel dan cerita rekaan",
-  ];
-  ?>
   <div class="app-shell">
-<?php require_once "../../components/admin/sidebar.php"; ?>
+  <?php require_once __DIR__ . "/../../components/admin/sidebar.php" ?>
 
     <main class="app-main">
-<?php require_once "../../components/admin/topbar.php"; ?>
+    <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
 
       <div class="app-content">
         <form method="POST" action="../../actions/categories/update.php">
@@ -42,7 +38,7 @@ $pageSubtitle = "kelola data sistem perpustakaan";
 
             <div class="form-actions">
               <a href="index.php" class="btn btn-outline">Batal</a>
-              <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+              <button type="submit" name="update" class="btn btn-primary">Simpan Perubahan</button>
             </div>
           </div>
         </form>
