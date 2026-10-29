@@ -1,4 +1,10 @@
 <?php
-echo "<h3>Aksi Update Kategori</h3>";
-echo "<pre>"; print_r($_POST); echo "</pre>";
-echo '<a href="../../pages/categories/index.php">Kembali</a>';
+if (isset($_POST['update']) && $_SERVER['REQUEST_METHOD'] === "POST") {
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $description = $_POST['description'];
+
+    print_r($_POST);
+}
+
+?>

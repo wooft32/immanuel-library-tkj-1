@@ -1,12 +1,16 @@
 <?php
-require_once "../../repositories/book-repository.php";
-require_once "../../repositories/category-repository.php";
-require_once "../../repositories/author-repository.php";
+require_once __DIR__ . "/../../repositories/book-repository.php";
+require_once __DIR__ . "/../../repositories/category-repository.php";
+require_once __DIR__ . "/../../repositories/author-repository.php";
 
 $book = getBook();
 $categories = getCategories();
 $authors = getAuthors();
+
+$pageTitle = "Edit Buku";
+$pageSubtitle = "Perbarui data buku, kategori, dan penulis";
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -16,30 +20,14 @@ $authors = getAuthors();
   <link rel="stylesheet" href="../../styles/books/edit.css">
 </head>
 <body>
-  <?php
-  $pageTitle = "edit buku";
-  $pageSubtitle = "kelola data sistem perpustakaan";
-  ?>
-
-
-  <?php
-  $categories = ["Fiksi", "Sains", "Sejarah", "Teknologi"];
-  $authors = ["Andrea Hirata", "Tere Liye", "J.K. Rowling", "Pramoedya Ananta Toer", "Sapardi Djoko Damono"];
-
-  $book = [
-      "id" => 5, "title" => "Antologi Rasa Nusantara", "isbn" => "978-602-1234-56-7",
-      "year" => 2021, "stock" => 4, "category_id" => 1,
-      "description" => "Kumpulan puisi dan cerita pendek dari berbagai penulis Nusantara.",
-      "author_ids" => [4, 5],
-  ];
-  ?>
   <div class="app-shell">
-  <?php require_once "../../components/admin/sidebar.php"; ?>
+  <?php require_once __DIR__ . "/../../components/admin/sidebar.php" ?>
+
     <main class="app-main">
-     <?php require_once "../../components/admin/topbar.php"; ?>
+    <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
 
       <div class="app-content">
-        <form action="../../actions/books/update.php" method="post">
+        <form method="POST" action="../../actions/books/update.php">
           <input type="hidden" name="id" value="<?= $book['id'] ?>">
           <div class="form-card" style="margin-bottom:20px;">
             <div class="form-section-title">Data Buku</div>
@@ -65,8 +53,8 @@ $authors = getAuthors();
               <div class="form-group">
                 <label for="category_id">Kategori</label>
                 <select id="category_id" name="category_id">
-                  <?php foreach ($categories as $index => $category): ?>
-                    <option value="<?= $index + 1 ?>" <?= ($index + 1) === $book['category_id'] ? 'selected' : '' ?>><?= $category ?></option>
+                  <?php foreach ($categories as $category): ?>
+                    <option value="<?= $category['id'] ?>" <?= $category['id'] === $book['category_id'] ? 'selected' : '' ?>><?= $category['name'] ?></option>
                   <?php endforeach; ?>
                 </select>
               </div>
@@ -82,11 +70,10 @@ $authors = getAuthors();
             <div class="form-group">
               <label>Pilih Penulis (bisa lebih dari satu)</label>
               <div class="checkbox-grid">
-                <?php foreach ($authors as $index => $authorName): ?>
-                  <?php $authorId = $index + 1; ?>
+                <?php foreach ($authors as $author): ?>
                   <label class="checkbox-item">
-                    <input type="checkbox" name="author_ids[]" value="<?= $authorId ?>" <?= in_array($authorId, $book['author_ids']) ? 'checked' : '' ?>>
-                    <?= $authorName ?>
+                    <input type="checkbox" name="author_ids[]" value="<?= $author['id'] ?>" <?= in_array($author['id'], $book['author_ids']) ? 'checked' : '' ?>>
+                    <?= $author['name'] ?>
                   </label>
                 <?php endforeach; ?>
               </div>
@@ -94,7 +81,7 @@ $authors = getAuthors();
 
             <div class="form-actions">
               <a href="index.php" class="btn btn-outline">Batal</a>
-              <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+              <button type="submit" name="update" class="btn btn-primary">Simpan Perubahan</button>
             </div>
           </div>
         </form>

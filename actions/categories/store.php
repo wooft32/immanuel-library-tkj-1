@@ -1,4 +1,9 @@
 <?php
-echo "<h3>Aksi Tambah Kategori</h3>";
-echo "<pre>"; print_r($_POST); echo "</pre>";
-echo '<a href="../../pages/categories/index.php">Kembali</a>';
+if (isset($_POST['store']) && $_SERVER['REQUEST_METHOD'] === "POST") {
+    $name = $_POST['name'];
+    $description = $_POST['description'];
+
+    print_r($_POST);
+}
+
+?>
